@@ -20,17 +20,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="我向时间租来了人生，每次续费都要缴出一些灵魂">
-<meta property="og:type" content="website">
-<meta property="og:title" content="寻梦之旅">
-<meta property="og:url" content="http://example.com/tags/github/index.html">
+  <meta name="description" content="关于windows命令行的一些内容方便自己随时查询侵删致歉">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cmd命令行学习">
+<meta property="og:url" content="http://example.com/2023/11/21/08-cmd%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="寻梦之旅">
-<meta property="og:description" content="我向时间租来了人生，每次续费都要缴出一些灵魂">
+<meta property="og:description" content="关于windows命令行的一些内容方便自己随时查询侵删致歉">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-21T02:40:25.000Z">
+<meta property="article:modified_time" content="2023-11-21T11:20:48.733Z">
 <meta property="article:author" content="久等">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="cmd">
+<meta property="article:tag" content="命令行">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/tags/github/">
+<link rel="canonical" href="http://example.com/2023/11/21/08-cmd%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AD%A6%E4%B9%A0/">
 
 
 <script id="page-configurations">
@@ -38,12 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: github | 寻梦之旅</title>
+  <title>cmd命令行学习 | 寻梦之旅</title>
   
 
 
@@ -157,51 +163,88 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">github
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/21/08-cmd%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="久等">
+      <meta itemprop="description" content="我向时间租来了人生，每次续费都要缴出一些灵魂">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="寻梦之旅">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          cmd命令行学习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-11-21 10:40:25 / 修改时间：19:20:48" itemprop="dateCreated datePublished" datetime="2023-11-21T10:40:25+08:00">2023-11-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+        <p>关于windows命令行的一些内容<br>方便自己随时查询<br>侵删致歉</p>
+<span id="more"></span>
+<h1 id="cmd"><a href="#cmd" class="headerlink" title="cmd"></a>cmd</h1><h2 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h2><p>-t             Ping 指定的主机，直到停止。<br>                若要查看统计信息并继续操作，请键入 Ctrl+Break；<br>                若要停止，请键入 Ctrl+C。<br>-a             将地址解析为主机名。<br>-n count       要发送的回显请求数。<br>-l size        发送缓冲区大小。<br>-f             在数据包中设置“不分段”标记(仅适用于 IPv4)。<br>-i TTL         生存时间。<br>-v TOS         服务类型(仅适用于 IPv4。该设置已被弃用，<br>                对 IP 标头中的服务类型字段没有任何<br>                影响)。<br>-r count       记录计数跃点的路由(仅适用于 IPv4)。<br>-s count       计数跃点的时间戳(仅适用于 IPv4)。<br>-j host-list   与主机列表一起使用的松散源路由(仅适用于 IPv4)。<br>-k host-list    与主机列表一起使用的严格源路由(仅适用于 IPv4)。<br>-w timeout     等待每次回复的超时时间(毫秒)。<br>-R             同样使用路由标头测试反向路由(仅适用于 IPv6)。<br>                根据 RFC 5095，已弃用此路由标头。<br>                如果使用此标头，某些系统可能丢弃<br>                回显请求。<br>-S srcaddr     要使用的源地址。<br>-c compartment 路由隔离舱标识符。<br>-p             Ping Hyper-V 网络虚拟化提供程序地址。<br>-4             强制使用 IPv4。<br>-6             强制使用 IPv6。</p>
+<h2 id="net"><a href="#net" class="headerlink" title="net"></a>net</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-11-14T15:59:42+08:00"
-              content="2023-11-14">
-          11-14
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag"># 学习</a>
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+              <a href="/tags/cmd/" rel="tag"># cmd</a>
+              <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="tag"># 命令行</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/11/14/01-%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E8%BF%99%E4%B8%AA%E9%A1%B5%E9%9D%A2/" itemprop="url">
-            <span itemprop="name">如何建立这个页面</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/11/20/07-http%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="HTTP学习笔记">
+      <i class="fa fa-chevron-left"></i> HTTP学习笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/11/21/09-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="操作系统学习笔记">
+      操作系统学习笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -254,6 +297,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#cmd"><span class="nav-number">1.</span> <span class="nav-text">cmd</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ping"><span class="nav-number">1.1.</span> <span class="nav-text">ping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#net"><span class="nav-number">1.2.</span> <span class="nav-text">net</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
