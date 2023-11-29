@@ -28,7 +28,7 @@
 <meta property="og:description" content="这是到目前为止的学习记录，持续更新中">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-23T09:09:43.000Z">
-<meta property="article:modified_time" content="2023-11-28T14:06:45.868Z">
+<meta property="article:modified_time" content="2023-11-29T14:39:46.850Z">
 <meta property="article:author" content="久等">
 <meta property="article:tag" content="js">
 <meta property="article:tag" content="学习">
@@ -201,7 +201,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-28 22:06:45" itemprop="dateModified" datetime="2023-11-28T22:06:45+08:00">2023-11-28</time>
+                <time title="修改时间：2023-11-29 22:39:46" itemprop="dateModified" datetime="2023-11-29T22:39:46+08:00">2023-11-29</time>
               </span>
 
           
@@ -759,10 +759,283 @@
 </li>
 </ol>
 <blockquote>
-<p>item 数组的每一项<br>index 数组的索引<br>arr 原始数组<br>12. forEach() 遍历数组<br>    + 语法：数组.forEach(fuction(item,index,arr){})<br>    + 作用：遍历数组<br>    + 返回值：无<br>13. map() 映射数组<br>    + 语法：数组.map(fuction(item,index,arr){})<br>    + 作用：映射数组<br>    + 返回值：映射后的新数组<br>14. filter() 过滤数组<br>    + 语法：数组.filter(fuction(item,index,arr){})<br>    + 作用：过滤数组<br>    + 返回值：过滤后的新数组<br>15. every() 判断是否全部满足条件<br>    + 语法：数组.every(fuction(item,index,arr){})<br>    + 作用：判断数组是不是<strong>每一项</strong>都满足条件<br>    + 返回值：一个布尔值<br>16. some() 判断是否有满足条件的项<br>    + 语法：数组.some(fuction(item,index,arr){})<br>    + 作用：判断数组是不是有<strong>某一项</strong>满足条件<br>    + 返回值：一个布尔值</p>
+<p>item 数组的每一项<br>index 数组的索引<br>arr 原始数组</p>
 </blockquote>
+<ol start="12">
+<li>forEach() 遍历数组<ul>
+<li>语法：数组.forEach(fuction(item,index,arr){})</li>
+<li>作用：遍历数组</li>
+<li>返回值：无</li>
+</ul>
+</li>
+<li>map() 映射数组<ul>
+<li>语法：数组.map(fuction(item,index,arr){})</li>
+<li>作用：映射数组</li>
+<li>返回值：映射后的新数组</li>
+</ul>
+</li>
+<li>filter() 过滤数组<ul>
+<li>语法：数组.filter(fuction(item,index,arr){})</li>
+<li>作用：过滤数组</li>
+<li>返回值：过滤后的新数组</li>
+</ul>
+</li>
+<li>every() 判断是否全部满足条件<ul>
+<li>语法：数组.every(fuction(item,index,arr){})</li>
+<li>作用：判断数组是不是<strong>每一项</strong>都满足条件</li>
+<li>返回值：一个布尔值</li>
+</ul>
+</li>
+<li>some() 判断是否有满足条件的项<ul>
+<li>语法：数组.some(fuction(item,index,arr){})</li>
+<li>作用：判断数组是不是有<strong>某一项</strong>满足条件</li>
+<li>返回值：一个布尔值</li>
+</ul>
+</li>
+</ol>
 <h3 id="字符串常用方法"><a href="#字符串常用方法" class="headerlink" title="字符串常用方法"></a>字符串常用方法</h3><p>帮助我们对字符串进行快速操作</p>
-<h3 id="数字常用方法"><a href="#数字常用方法" class="headerlink" title="数字常用方法"></a>数字常用方法</h3><h3 id="时间常用方法"><a href="#时间常用方法" class="headerlink" title="时间常用方法"></a>时间常用方法</h3><h2 id="js的BOM操作"><a href="#js的BOM操作" class="headerlink" title="js的BOM操作"></a>js的BOM操作</h2><h2 id="js的定时器"><a href="#js的定时器" class="headerlink" title="js的定时器"></a>js的定时器</h2><h2 id="DOM基本操作"><a href="#DOM基本操作" class="headerlink" title="DOM基本操作"></a>DOM基本操作</h2><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2>
+<ol>
+<li>charAt() 按照索引获取字符<ul>
+<li>语法：字符串.charAt(索引)</li>
+<li>作用：获取对应索引位置的字符</li>
+<li>返回值：对应索引位置的字符</li>
+</ul>
+</li>
+<li>toLowerCase() 转大写 <ul>
+<li>语法：字符串.toLowerCase()</li>
+<li>作用：将字符串内的字母全部转换成小写</li>
+<li>返回值：转换好的字符串</li>
+</ul>
+</li>
+<li>toUpperCase() 转小写<ul>
+<li>语法：字符串.toLowerCase()</li>
+<li>作用： 将字符串内的字母全部转换成大写</li>
+<li>返回值：转换好的字符串</li>
+</ul>
+</li>
+<li>replace() 替换字符串<ul>
+<li>语法：字符串.replace(换下内容，换上内容)</li>
+<li>作用：将字符串内第一个满足换下内容的片段替换成换上内容</li>
+<li>返回值：替换好的字符串</li>
+</ul>
+</li>
+<li>trim() 去除首尾空额<ul>
+<li>语法：字符串.trim()</li>
+<li>作用：去除字符串首尾的空格</li>
+<li>返回值：去除空格后的字符串</li>
+</ul>
+</li>
+<li>split() 切割字符串<ul>
+<li>语法：字符串.split(分隔符)</li>
+<li>作用：按照分隔符将字符串切割成为一个数组</li>
+<li>返回值：切割后的数组</li>
+</ul>
+</li>
+<li>substr() 截取字符串<ul>
+<li>语法：字符串.substr(开始索引，多少个)</li>
+<li>作用：截取字符串</li>
+<li>返回值：截取出来的字符串</li>
+</ul>
+</li>
+<li>substring() 截取字符串<ul>
+<li>语法：字符串.substring(开始索引，结束索引)</li>
+<li>作用：截取字符串</li>
+<li>返回值：截取出来的字符串</li>
+</ul>
+</li>
+<li>slice() 截取字符串<ul>
+<li>语法：字符串.slice(开始索引，结束索引)</li>
+<li>作用：截取字符串</li>
+<li>返回值：截取出来的字符串</li>
+</ul>
+</li>
+</ol>
+<h3 id="数字常用方法"><a href="#数字常用方法" class="headerlink" title="数字常用方法"></a>数字常用方法</h3><p>帮助我们对数字进行快速操作</p>
+<ol>
+<li>random()  0-1之间的随机小数<ul>
+<li>语法：Math.random()</li>
+<li>作用：获取0-1之间的随机小数。包括0，不包括1.</li>
+<li>返回值：0-1之间的随机小数</li>
+</ul>
+</li>
+<li>round() 四舍五入取整<ul>
+<li>语法：Math.round(数字)</li>
+<li>作用：对数字进行四舍五入取整</li>
+<li>返回值：四舍五入后的整数</li>
+</ul>
+</li>
+<li>ceil() 向上取整<ul>
+<li>语法：Math.ceil(数字)</li>
+<li>作用：对数字进行向上取整</li>
+<li>返回值：向上取整后的整数</li>
+</ul>
+</li>
+<li>floor() 向下取整<ul>
+<li>语法：Math.floor(数字)</li>
+<li>作用：对数字进行向下取整</li>
+<li>返回值：向下取整后的整数</li>
+</ul>
+</li>
+<li>pow()  取幂<ul>
+<li>语法：Math.pow(底数，指数)</li>
+<li>作用：对数字进行取幂运算</li>
+<li>返回值：取幂后的结果</li>
+</ul>
+</li>
+<li>sqrt()  二次方根<ul>
+<li>语法：Math.sqrt(数字)</li>
+<li>作用：对数字进行二次方跟运算</li>
+<li>返回值：二次方根后的结果</li>
+</ul>
+</li>
+<li>abs() 取绝对值<ul>
+<li>语法：Math.abs(数字)</li>
+<li>作用：对数字进行取绝对值运算</li>
+<li>返回值：绝对值运算后的结果</li>
+</ul>
+</li>
+<li>max() 取最大值<ul>
+<li>语法：Math.max(数组)</li>
+<li>作用：获取若干数字的最大值</li>
+<li>返回值：其中的最大值</li>
+</ul>
+</li>
+<li>min() 取最小值<ul>
+<li>语法：Math.min(数组)</li>
+<li>作用：获取若干数字的最小值</li>
+<li>返回值：其中的最小值</li>
+</ul>
+</li>
+<li>PI 近似Π的值<ul>
+<li>语法：Math.PI</li>
+<li>作用：得到一个近似Π的值</li>
+<li>返回值：一个近似Π的值</li>
+</ul>
+</li>
+</ol>
+<h3 id="时间常用方法"><a href="#时间常用方法" class="headerlink" title="时间常用方法"></a>时间常用方法</h3><h2 id="js的BOM操作"><a href="#js的BOM操作" class="headerlink" title="js的BOM操作"></a>js的BOM操作</h2><p>一整套操作浏览器相关内容的属性和方法</p>
+<ul>
+<li>操作浏览器的历史记录</li>
+<li>操作浏览器的滚动条</li>
+<li>操作浏览器页面跳转</li>
+<li>操作浏览器标签页的开启和关闭</li>
+<li>……</li>
+</ul>
+<ol>
+<li>获取浏览器窗口尺寸</li>
+</ol>
+<ul>
+<li>获取可视窗口宽度</li>
+<li>获取可视窗口高度<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取宽度</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">innerWidth</span></span><br><span class="line"><span class="comment">//获取高度</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">innerHeight</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="2">
+<li>浏览器的弹出层</li>
+</ol>
+<ul>
+<li>提示框</li>
+<li>询问框</li>
+<li>输入框<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//提示框</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">alert</span>(<span class="string">&#x27;提示信息&#x27;</span>)</span><br><span class="line"><span class="comment">//询问框</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">confirm</span>(<span class="string">&#x27;提示信息&#x27;</span>)</span><br><span class="line"><span class="comment">//输入框</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">prompt</span>(<span class="string">&#x27;提示信息&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3">
+<li>开启和关闭标签页</li>
+</ol>
+<ul>
+<li>开启</li>
+<li>关闭<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//开启</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">open</span>(<span class="string">&#x27;地址&#x27;</span>)</span><br><span class="line"><span class="comment">//关闭</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">close</span>()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="4">
+<li>浏览器常见事件</li>
+</ol>
+<ul>
+<li>资源加载完成</li>
+<li>可视尺寸改变</li>
+<li>滚动条位置改变<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加载完成</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span> = <span class="title function_">fuction</span>(<span class="params"></span>)&#123;&#125;</span><br><span class="line"><span class="comment">//可视尺寸改变</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onresize</span> = <span class="title function_">fuction</span>(<span class="params"></span>)&#123;&#125;</span><br><span class="line"><span class="comment">//滚动条位置改变</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onscorll</span> = <span class="title function_">fuction</span>(<span class="params"></span>)&#123;&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="5">
+<li>浏览器的历史记录操作</li>
+</ol>
+<ul>
+<li>回退页面</li>
+<li>前进页面<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//回退页面</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">history</span>.<span class="title function_">back</span>()</span><br><span class="line"><span class="comment">//前进页面</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">history</span>.<span class="title function_">forward</span>()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="6">
+<li>浏览器卷去的尺寸</li>
+</ol>
+<ul>
+<li>卷去的高度<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollTop</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">scrollTop</span></span><br></pre></td></tr></table></figure></li>
+<li>卷去的宽度<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollLeft</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">scrollLeft</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="7">
+<li>浏览器滚动到</li>
+</ol>
+<ul>
+<li>window.scrollTo()<ul>
+<li>参数方式<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">scrollTo</span>(left,top)</span><br><span class="line"><span class="comment">//第二种</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">scrollTo</span>(&#123;</span><br><span class="line">    <span class="attr">left</span>:xx,</span><br><span class="line">    <span class="attr">top</span>:yy,</span><br><span class="line">    <span class="attr">behavior</span>:<span class="string">&#x27;smooth&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="js的定时器"><a href="#js的定时器" class="headerlink" title="js的定时器"></a>js的定时器</h2><ul>
+<li>间隔定时器<ul>
+<li>按照指定周期(毫秒)去执行执行的代码<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">setinterval</span>(函数,时间)</span><br><span class="line"><span class="comment">//函数：要执行的内容</span></span><br><span class="line"><span class="comment">//时间：单位是ms</span></span><br><span class="line"><span class="title function_">setinterval</span>(<span class="title function_">fuction</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;执行一次&#x27;</span>)</span><br><span class="line">&#125;，<span class="number">1000</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>延时定时器<ul>
+<li>在固定的时间(毫秒)后执行一次指定代码<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(函数，时间)</span><br><span class="line"><span class="comment">//时间到达执行的内容</span></span><br><span class="line"><span class="comment">//单位是毫秒</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="title function_">fuction</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;执行一次&#x27;</span>)</span><br><span class="line">&#125;，<span class="number">1000</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>定时器的返回值<ul>
+<li>不区分定时器种类</li>
+<li>表示是是当前页面的第几个定时器<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 书写第一个定时器</span></span><br><span class="line"><span class="keyword">var</span> timer1 = <span class="built_in">setInterval</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;&#125;, <span class="number">1000</span>)</span><br><span class="line"><span class="comment">// 书写第二个定时器</span></span><br><span class="line"><span class="keyword">var</span> timer2 = <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;&#125;, <span class="number">1000</span>)</span><br><span class="line"><span class="comment">// 输出返回值</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>( <span class="string">&#x27;timer1 : &#x27;</span>, timer1 )</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>( <span class="string">&#x27;timer2 : &#x27;</span>, timer2 )</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>关闭定时器<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语法一</span></span><br><span class="line"><span class="built_in">clearInterval</span>(要关闭的定时器返回值)</span><br><span class="line"><span class="comment">//语法二</span></span><br><span class="line"><span class="built_in">clearTimeout</span>(要关闭的定时器返回值)</span><br><span class="line"><span class="comment">//不区分定时器种类</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="DOM基本操作"><a href="#DOM基本操作" class="headerlink" title="DOM基本操作"></a>DOM基本操作</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>一成套操作文档流相关的属性和方法</p>
+<ul>
+<li>操作元素修改样式</li>
+<li>操作元素修改属性</li>
+<li>操作元素改变位置</li>
+<li>操作元素添加事件</li>
+</ul>
+<h3 id="获取元素的方式"><a href="#获取元素的方式" class="headerlink" title="获取元素的方式"></a>获取元素的方式</h3><p>确定你要操作的是哪一个元素</p>
+<ul>
+<li>根据id名称获取<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">doctument.<span class="title function_">getElementByld</span>(<span class="string">&#x27;id名称&#x27;</span>)</span><br><span class="line"><span class="comment">//作用：获取文档流中id名对应的一个元素</span></span><br><span class="line"><span class="comment">//返回值：</span></span><br><span class="line"><span class="comment">//如果有id对应的元素，就是这个元素。</span></span><br><span class="line"><span class="comment">//没有就是null</span></span><br></pre></td></tr></table></figure></li>
+<li>根据元素类名获取<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementByClassName</span>(<span class="string">&#x27;元素类名&#x27;</span>)</span><br><span class="line"><span class="comment">//作用：获取文档流中类名对应的一个元素</span></span><br><span class="line"><span class="comment">//返回值：必然是一个伪数组</span></span><br><span class="line"><span class="comment">//如果有类名对应的元素，有多少获取多少。</span></span><br><span class="line"><span class="comment">//如果没有类名对应的元素，空的伪数组</span></span><br></pre></td></tr></table></figure></li>
+<li>根据元素标签名获取<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementByTagName</span>(<span class="string">&#x27;标签名&#x27;</span>)</span><br><span class="line"><span class="comment">//作用：获取文档流中标签名对应的一个元素</span></span><br><span class="line"><span class="comment">//返回值：必然是一个伪数组</span></span><br><span class="line"><span class="comment">//如果有标签名对应的元素，有多少获取多少。</span></span><br><span class="line"><span class="comment">//如果没有标签名对应的元素，空的伪数组。</span></span><br></pre></td></tr></table></figure></li>
+<li>根据选择器获取一个<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;选择器&#x27;</span>)</span><br><span class="line"><span class="comment">//作用：获取文档流中满足选择器规则的第一个元素 </span></span><br><span class="line"><span class="comment">//返回值：</span></span><br><span class="line"><span class="comment">//如果去选择器对应的元素，获取到第一个</span></span><br><span class="line"><span class="comment">//如果没有选择器对应的元素，null</span></span><br></pre></td></tr></table></figure></li>
+<li>根据选择器获取一组<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySeletorAll</span>(<span class="string">&#x27;选择器&#x27;</span>)</span><br><span class="line"><span class="comment">//作用：获取文档流中满足选择器规则的所有元素</span></span><br><span class="line"><span class="comment">//返回值：必然是一个伪数组</span></span><br><span class="line"><span class="comment">//如果有选择器对应的元素，有多少获取多少。</span></span><br><span class="line"><span class="comment">//如果没有选择器对应的元素，空的伪数组。</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="操作元素内容"><a href="#操作元素内容" class="headerlink" title="操作元素内容"></a>操作元素内容</h3><ul>
+<li>操作文本内容<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取</span></span><br><span class="line">元素.<span class="property">innerText</span></span><br><span class="line"><span class="comment">//设置</span></span><br><span class="line">元素.<span class="property">innerText</span> = <span class="string">&#x27;新内容&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li>操作超文本内容<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取</span></span><br><span class="line">元素.<span class="property">innerHTML</span></span><br><span class="line"><span class="comment">//设置</span></span><br><span class="line">元素.<span class="property">innerHTML</span> = <span class="string">&#x27;新内容&#x27;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="操作元素属性"><a href="#操作元素属性" class="headerlink" title="操作元素属性"></a>操作元素属性</h3><ul>
+<li><p>原生属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取</span></span><br><span class="line">元素.属性名</span><br><span class="line"><span class="comment">//设置</span></span><br><span class="line">元素.属性名 = <span class="string">&#x27;属性值&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>自定义属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取</span></span><br><span class="line">元素.<span class="title function_">getAttribute</span>(<span class="string">&#x27;属性名&#x27;</span>)</span><br><span class="line"><span class="comment">//设置</span></span><br><span class="line">元素.<span class="title function_">getAttribute</span>(<span class="string">&#x27;属性名&#x27;</span>，<span class="string">&#x27;属性值&#x27;</span>)</span><br><span class="line"><span class="comment">//删除</span></span><br><span class="line">元素.<span class="title function_">removeAttribute</span>(<span class="string">&#x27;属性名&#x27;</span>)</span><br><span class="line"><span class="comment">//以上方式一般不用于操作元素 类名和样式</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>操作元素类名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取</span></span><br><span class="line">元素.<span class="property">className</span></span><br><span class="line"><span class="comment">//设置</span></span><br><span class="line">元素.<span class="property">className</span> = <span class="string">&#x27;新类名&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>操作元素行内样式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取</span></span><br><span class="line">元素.<span class="property">style</span>.样式名</span><br><span class="line"><span class="comment">//设置</span></span><br><span class="line">元素.<span class="property">style</span>.样式名 = <span class="string">&#x27;样式值&#x27;</span></span><br><span class="line"><span class="comment">//只能获取和设置元素的行内样式</span></span><br></pre></td></tr></table></figure></li>
+<li><p>获取元素非行内样式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">getComputedStyle</span>(元素).样式名</span><br><span class="line"><span class="comment">//可以获取行内样式，也可以获取非行内样式。</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h3><ul>
+<li>创建节点<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">createElenment</span>(<span class="string">&#x27;标签名称&#x27;</span>)</span><br><span class="line"><span class="comment">//创建一个指定标签元素</span></span><br><span class="line"><span class="comment">//返回一个创建好的元素节点</span></span><br></pre></td></tr></table></figure></li>
+<li>插入节点<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语法一</span></span><br><span class="line">父节点.<span class="title function_">appendChild</span>(子节点)</span><br><span class="line"><span class="comment">//把子节点放在父节点的内部，并且放置在最后的位置</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//语法二</span></span><br><span class="line">父节点.<span class="title function_">insertBefore</span>(要插入的子节点，哪一个子节点的前面)</span><br><span class="line"><span class="comment">//把子节点放在父节点的内部，并且放在指定的某一个子节点前面。</span></span><br></pre></td></tr></table></figure></li>
+<li>删除节点<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语法一</span></span><br><span class="line">父节点.<span class="title function_">removeChild</span>(子节点)</span><br><span class="line"><span class="comment">//从父节点删除某一个子节点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//语法二</span></span><br><span class="line">节点.<span class="title function_">remove</span>()</span><br><span class="line"><span class="comment">//把自己直接删除</span></span><br></pre></td></tr></table></figure></li>
+<li>替换节点<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">父节点.<span class="title function_">replaceChild</span>(换上节点，换下节点)</span><br><span class="line"><span class="comment">//在父节点内，使用换上节点替换掉换下节点</span></span><br></pre></td></tr></table></figure></li>
+<li>克隆节点<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">节点.<span class="title function_">conleNode</span>(是否克隆‘后代’替节点)</span><br><span class="line"><span class="comment">//把该节点复制一份一摸一样的内容</span></span><br><span class="line"><span class="comment">//返回克隆后的新节点</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="获取元素尺寸"><a href="#获取元素尺寸" class="headerlink" title="获取元素尺寸"></a>获取元素尺寸</h3><p>包括</p>
+<ul>
+<li>边框boder</li>
+<li>内边距padding</li>
+<li>内容content<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语法一</span></span><br><span class="line">元素.<span class="property">offsetHeight</span></span><br><span class="line">元素.<span class="property">offsetwidth</span></span><br><span class="line"><span class="comment">//获取 元素 内容 + padding + boder 区域的尺寸</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//语法二</span></span><br><span class="line">元素.<span class="property">clientHeight</span></span><br><span class="line">元素.<span class="property">clientWidth</span></span><br><span class="line"><span class="comment">//获取 元素 内容 + padding 区域的尺寸</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2>
     </div>
 
     
@@ -849,7 +1122,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaSprit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">JavaSprit学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E8%83%8C%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">出现背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">1.2.</span> <span class="nav-text">js的组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E4%B9%A6%E5%86%99%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">js的书写位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E5%8F%98%E9%87%8F"><span class="nav-number">1.4.</span> <span class="nav-text">js的变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%B9%A6%E5%86%99%E6%B3%A8%E9%87%8A"><span class="nav-number">1.5.</span> <span class="nav-text">如何书写注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%87%BA"><span class="nav-number">1.6.</span> <span class="nav-text">在浏览器输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.7.</span> <span class="nav-text">js的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B"><span class="nav-number">1.7.1.</span> <span class="nav-text">js数据类型检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.7.2.</span> <span class="nav-text">js数据类型的转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.8.</span> <span class="nav-text">js的运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.9.</span> <span class="nav-text">条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.9.1.</span> <span class="nav-text">条件分支语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.9.2.</span> <span class="nav-text">js循环结构语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">1.10.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E9%98%B6%E6%AE%B5"><span class="nav-number">1.10.1.</span> <span class="nav-text">定义函数阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E9%98%B6%E6%AE%B5"><span class="nav-number">1.10.2.</span> <span class="nav-text">函数调用阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-number">1.10.3.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">1.10.4.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0"><span class="nav-number">1.10.5.</span> <span class="nav-text">递归函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.11.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88Object%EF%BC%89"><span class="nav-number">1.11.1.</span> <span class="nav-text">对象数据类型（Object）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88array%EF%BC%89"><span class="nav-number">1.11.2.</span> <span class="nav-text">数据数据类型（array）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-number">1.12.</span> <span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="nav-number">1.12.1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="nav-number">1.12.2.</span> <span class="nav-text">选择排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">1.13.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.13.1.</span> <span class="nav-text">数组常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.13.2.</span> <span class="nav-text">字符串常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.13.3.</span> <span class="nav-text">数字常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.13.4.</span> <span class="nav-text">时间常用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84BOM%E6%93%8D%E4%BD%9C"><span class="nav-number">1.14.</span> <span class="nav-text">js的BOM操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="nav-number">1.15.</span> <span class="nav-text">js的定时器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.16.</span> <span class="nav-text">DOM基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.17.</span> <span class="nav-text">事件</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaSprit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">JavaSprit学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E8%83%8C%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">出现背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">1.2.</span> <span class="nav-text">js的组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E4%B9%A6%E5%86%99%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">js的书写位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E5%8F%98%E9%87%8F"><span class="nav-number">1.4.</span> <span class="nav-text">js的变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%B9%A6%E5%86%99%E6%B3%A8%E9%87%8A"><span class="nav-number">1.5.</span> <span class="nav-text">如何书写注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%87%BA"><span class="nav-number">1.6.</span> <span class="nav-text">在浏览器输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.7.</span> <span class="nav-text">js的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B"><span class="nav-number">1.7.1.</span> <span class="nav-text">js数据类型检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.7.2.</span> <span class="nav-text">js数据类型的转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.8.</span> <span class="nav-text">js的运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.9.</span> <span class="nav-text">条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.9.1.</span> <span class="nav-text">条件分支语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.9.2.</span> <span class="nav-text">js循环结构语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">1.10.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E9%98%B6%E6%AE%B5"><span class="nav-number">1.10.1.</span> <span class="nav-text">定义函数阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E9%98%B6%E6%AE%B5"><span class="nav-number">1.10.2.</span> <span class="nav-text">函数调用阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-number">1.10.3.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">1.10.4.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0"><span class="nav-number">1.10.5.</span> <span class="nav-text">递归函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.11.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88Object%EF%BC%89"><span class="nav-number">1.11.1.</span> <span class="nav-text">对象数据类型（Object）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88array%EF%BC%89"><span class="nav-number">1.11.2.</span> <span class="nav-text">数据数据类型（array）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-number">1.12.</span> <span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="nav-number">1.12.1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="nav-number">1.12.2.</span> <span class="nav-text">选择排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">1.13.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.13.1.</span> <span class="nav-text">数组常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.13.2.</span> <span class="nav-text">字符串常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.13.3.</span> <span class="nav-text">数字常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.13.4.</span> <span class="nav-text">时间常用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84BOM%E6%93%8D%E4%BD%9C"><span class="nav-number">1.14.</span> <span class="nav-text">js的BOM操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="nav-number">1.15.</span> <span class="nav-text">js的定时器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.16.</span> <span class="nav-text">DOM基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.16.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">1.16.2.</span> <span class="nav-text">获取元素的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9"><span class="nav-number">1.16.3.</span> <span class="nav-text">操作元素内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7"><span class="nav-number">1.16.4.</span> <span class="nav-text">操作元素属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="nav-number">1.16.5.</span> <span class="nav-text">节点操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E5%B0%BA%E5%AF%B8"><span class="nav-number">1.16.6.</span> <span class="nav-text">获取元素尺寸</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.17.</span> <span class="nav-text">事件</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
