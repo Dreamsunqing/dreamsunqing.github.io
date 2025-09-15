@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xumeng.online","root":"/","images":"/images","scheme":"Gemini","darkmode":"auto","version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="日期: 2025年2月28日   主题: 家庭服务器搭建方案  背景需求最近苦于多设备学习资料无法同步，备份网盘又过于麻烦，期望搞一个是NAS又不止NAS的设备。  核心理念: 功能优化的尽头是自动化   社会生产力发展的最初动力是懒  方案对比传统NAS方案 黑&#x2F;白群晖: 推荐最多，方便易用 优势: 有文件索引，方便影音娱乐需求 局限: 功能相对固定，扩展性有限  自建方案但是，我还">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于NAS的思考">
+<meta property="og:url" content="http://xumeng.online/2025/02/%E5%85%B3%E4%BA%8ENAS%E7%9A%84%E6%80%9D%E8%80%83/">
+<meta property="og:site_name" content="寻梦之旅">
+<meta property="og:description" content="日期: 2025年2月28日   主题: 家庭服务器搭建方案  背景需求最近苦于多设备学习资料无法同步，备份网盘又过于麻烦，期望搞一个是NAS又不止NAS的设备。  核心理念: 功能优化的尽头是自动化   社会生产力发展的最初动力是懒  方案对比传统NAS方案 黑&#x2F;白群晖: 推荐最多，方便易用 优势: 有文件索引，方便影音娱乐需求 局限: 功能相对固定，扩展性有限  自建方案但是，我还">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-02-28T03:55:14.688Z">
+<meta property="article:modified_time" content="2025-09-15T03:55:14.879Z">
+<meta property="article:author" content="小徐至少有小梦">
+<meta property="article:tag" content="NAS">
+<meta property="article:tag" content="家庭服务器">
+<meta property="article:tag" content="Fnos">
+<meta name="twitter:card" content="&lt;twitter:card&gt;">
+
+
+<link rel="canonical" href="http://xumeng.online/2025/02/%E5%85%B3%E4%BA%8ENAS%E7%9A%84%E6%80%9D%E8%80%83/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://xumeng.online/2025/02/%E5%85%B3%E4%BA%8ENAS%E7%9A%84%E6%80%9D%E8%80%83/","path":"2025/02/关于NAS的思考/","title":"关于NAS的思考"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>关于NAS的思考 | 寻梦之旅</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">寻梦之旅</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录生活，分享技术，梦想起航。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E9%9C%80%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">背景需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94"><span class="nav-number">2.</span> <span class="nav-text">方案对比</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9FNAS%E6%96%B9%E6%A1%88"><span class="nav-number">2.1.</span> <span class="nav-text">传统NAS方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%BB%BA%E6%96%B9%E6%A1%88"><span class="nav-number">2.2.</span> <span class="nav-text">自建方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%BB%BA%E6%96%B9%E6%A1%88%E4%BC%98%E5%8A%BF"><span class="nav-number">3.</span> <span class="nav-text">自建方案优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E8%A6%81%E6%B1%82"><span class="nav-number">4.</span> <span class="nav-text">设备要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%B0%E6%9C%89%E8%AE%BE%E5%A4%87%E6%B8%85%E5%8D%95"><span class="nav-number">5.</span> <span class="nav-text">现有设备清单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E8%AE%BE%E5%A4%87"><span class="nav-number">5.1.</span> <span class="nav-text">我的设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87"><span class="nav-number">5.2.</span> <span class="nav-text">移动设备</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%B6%E5%BA%AD%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%96%B9%E6%A1%88"><span class="nav-number">6.</span> <span class="nav-text">家庭服务器方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E7%AE%97%E8%A7%84%E5%88%92"><span class="nav-number">6.1.</span> <span class="nav-text">预算规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E9%80%89%E6%8B%A9-%E6%80%9D%E8%80%83"><span class="nav-number">6.2.</span> <span class="nav-text">硬件选择 - 思考</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU"><span class="nav-number">6.2.1.</span> <span class="nav-text">CPU</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E6%9D%BF"><span class="nav-number">6.2.2.</span> <span class="nav-text">主板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E5%AD%98"><span class="nav-number">6.2.3.</span> <span class="nav-text">内存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E5%82%A8"><span class="nav-number">6.2.4.</span> <span class="nav-text">存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%BE%E5%8D%A1"><span class="nav-number">6.2.5.</span> <span class="nav-text">显卡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B5%E6%BA%90"><span class="nav-number">6.2.6.</span> <span class="nav-text">电源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">6.2.7.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E9%80%89%E6%8B%A9"><span class="nav-number">6.3.</span> <span class="nav-text">系统选择</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F"><span class="nav-number">6.3.1.</span> <span class="nav-text">底层系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E6%96%B9%E6%A1%88"><span class="nav-number">6.3.2.</span> <span class="nav-text">虚拟化方案</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E7%AE%A1%E7%90%86"><span class="nav-number">6.4.</span> <span class="nav-text">内容管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90"><span class="nav-number">6.4.1.</span> <span class="nav-text">影视资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B8%E7%89%87%E7%AE%A1%E7%90%86"><span class="nav-number">6.4.2.</span> <span class="nav-text">相片管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99"><span class="nav-number">6.4.3.</span> <span class="nav-text">学习资料</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%9B%E5%8D%9A%E6%89%8B%E5%8A%9E"><span class="nav-number">6.4.4.</span> <span class="nav-text">赛博手办</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E7%B4%A0%E6%9D%90"><span class="nav-number">6.4.5.</span> <span class="nav-text">视频素材</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%8A%9F%E8%83%BD"><span class="nav-number">6.4.6.</span> <span class="nav-text">特殊功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E8%BF%9B%E5%B1%95"><span class="nav-number">7.</span> <span class="nav-text">项目进展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2025%E5%B9%B46%E6%9C%888%E6%97%A5-%E5%B7%B2%E5%AE%9E%E7%8E%B0%E5%AE%B6%E5%BA%AD%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">7.1.</span> <span class="nav-text">2025年6月8日 - 已实现家庭服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2025%E5%B9%B47%E6%9C%8815%E6%97%A5-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%8D%A2%E4%B8%BAFnOS"><span class="nav-number">7.2.</span> <span class="nav-text">2025年7月15日 - 服务器系统更换为FnOS</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="小徐至少有小梦"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">小徐至少有小梦</p>
+  <div class="site-description" itemprop="description">我向时间租来了人生，每次续费，都要缴出一些灵魂。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dashboard" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dashboard" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dream_demo@outlook.com" title="E-Mail → mailto:dream_demo@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          友链
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com" rel="noopener" target="_blank">本站友链接</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://xumeng.online/2025/02/%E5%85%B3%E4%BA%8ENAS%E7%9A%84%E6%80%9D%E8%80%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="小徐至少有小梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="寻梦之旅">
+      <meta itemprop="description" content="我向时间租来了人生，每次续费，都要缴出一些灵魂。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="关于NAS的思考 | 寻梦之旅">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于NAS的思考
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-02-28 11:55:14" itemprop="dateCreated datePublished" datetime="2025-02-28T11:55:14+08:00">2025-02-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-09-15 11:55:14" itemprop="dateModified" datetime="2025-09-15T11:55:14+08:00">2025-09-15</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote>
+<p><strong>日期</strong>: 2025年2月28日</p>
+</blockquote>
+<blockquote>
+<p><strong>主题</strong>: 家庭服务器搭建方案</p>
+</blockquote>
+<h2 id="背景需求"><a href="#背景需求" class="headerlink" title="背景需求"></a>背景需求</h2><p>最近苦于多设备学习资料无法同步，备份网盘又过于麻烦，期望搞一个<strong>是NAS又不止NAS的设备</strong>。</p>
+<blockquote>
+<p><strong>核心理念</strong>: 功能优化的尽头是自动化</p>
+</blockquote>
+<blockquote>
+<p>社会生产力发展的最初动力是懒</p>
+</blockquote>
+<h2 id="方案对比"><a href="#方案对比" class="headerlink" title="方案对比"></a>方案对比</h2><h3 id="传统NAS方案"><a href="#传统NAS方案" class="headerlink" title="传统NAS方案"></a>传统NAS方案</h3><ul>
+<li><strong>黑&#x2F;白群晖</strong>: 推荐最多，方便易用</li>
+<li><strong>优势</strong>: 有文件索引，方便影音娱乐需求</li>
+<li><strong>局限</strong>: 功能相对固定，扩展性有限</li>
+</ul>
+<h3 id="自建方案"><a href="#自建方案" class="headerlink" title="自建方案"></a>自建方案</h3><p>但是，我还想挂载一些服务，比如：</p>
+<ul>
+<li><strong>网站</strong> - 个人博客</li>
+<li><strong>笔记</strong> - 学习笔记</li>
+<li><strong>自动化任务</strong> - 原神自动每日任务，我的赛博代肝</li>
+</ul>
+<p>思来想去，还是自己使用选择合适的Linux系统一步步自由定制一个。</p>
+<h2 id="自建方案优势"><a href="#自建方案优势" class="headerlink" title="自建方案优势"></a>自建方案优势</h2><ol>
+<li><p><strong>技能提升</strong>: 能够锻炼自己的Linux操作相关知识</p>
+</li>
+<li><p><strong>家庭娱乐</strong>: 能够方便电视观影，把家里的电视利用起来</p>
+</li>
+<li><p><strong>智能家居</strong>: 还能作为未来全屋智能家居的控制中心</p>
+</li>
+<li><p><strong>远程访问</strong>: 内网穿透，随时随地访问数据，观看学习中练习的案例和记录的笔记</p>
+</li>
+<li><p><strong>安全保障</strong>: 同时做好安全措施</p>
+<ul>
+<li>软件上防止信息泄露</li>
+<li>硬件上选择合适的策略防止炸硬盘</li>
+<li>配备UPS提供断电时紧急关机的电量</li>
+</ul>
+</li>
+<li><p><strong>功耗控制</strong>: 同时尽量考虑功耗问题，没有24h开机需求，可以适当安排关机时间</p>
+</li>
+<li><p><strong>位置选择</strong>: 尽量远离卧室 - 考虑噪音问题</p>
+<ul>
+<li>小或者定时关机可以放卧室</li>
+<li>大那就没办法放卧室的</li>
+</ul>
+</li>
+</ol>
+<h2 id="设备要求"><a href="#设备要求" class="headerlink" title="设备要求"></a>设备要求</h2><p><strong>外观</strong>: 小巧</p>
+<p><strong>性能</strong>: 稳定</p>
+<p><strong>扩展</strong>: 灵活</p>
+<h2 id="现有设备清单"><a href="#现有设备清单" class="headerlink" title="现有设备清单"></a>现有设备清单</h2><h3 id="我的设备"><a href="#我的设备" class="headerlink" title="我的设备"></a>我的设备</h3><ol>
+<li><p><strong>台式机</strong></p>
+<ul>
+<li>性能等级: 主流中段</li>
+<li>配置: i5-13400 + 4060Ti</li>
+</ul>
+</li>
+<li><p><strong>Win+Linux笔记本</strong></p>
+<ul>
+<li>性能等级: 进阶办公</li>
+<li>配置: i7-11360H</li>
+</ul>
+</li>
+<li><p><strong>黑Mac笔记本</strong></p>
+<ul>
+<li>性能等级: 基础办公</li>
+<li>配置: 老英特尔，联想邵阳</li>
+</ul>
+</li>
+</ol>
+<h3 id="移动设备"><a href="#移动设备" class="headerlink" title="移动设备"></a>移动设备</h3><ul>
+<li><strong>手机</strong>: 人手必需品</li>
+</ul>
+<h2 id="家庭服务器方案"><a href="#家庭服务器方案" class="headerlink" title="家庭服务器方案"></a>家庭服务器方案</h2><h3 id="预算规划"><a href="#预算规划" class="headerlink" title="预算规划"></a>预算规划</h3><ul>
+<li><strong>最大预算</strong>: 1200元左右（除去硬盘价格）</li>
+<li><strong>纯简单NAS</strong>: 肯定不需要1200，主要考虑还能拿来做个服务器很香的</li>
+<li><strong>目标</strong>: 尽可能低预算，用来练习Linux配置</li>
+</ul>
+<blockquote>
+<p><strong>备注</strong>: 话说，是不是有点要求又臭又长，预算又低又扣，hhh，学生党是这样的</p>
+</blockquote>
+<blockquote>
+<p>不过，个人考虑还是低成本练习后，才有能力，有自信，才敢玩高成本的嘛</p>
+</blockquote>
+<h3 id="硬件选择-思考"><a href="#硬件选择-思考" class="headerlink" title="硬件选择 - 思考"></a>硬件选择 - 思考</h3><h4 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h4><p><strong>民用级</strong> - 核心显卡直通NAS</p>
+<ul>
+<li>i5 - 8&#x2F;9&#x2F;10代</li>
+</ul>
+<p><strong>服务器级</strong> - 服务器内存便宜</p>
+<ul>
+<li>E3: PCIE少</li>
+<li>E5: PCIE多，2678V3 100元</li>
+</ul>
+<p><strong>要求</strong>:</p>
+<ul>
+<li><p>主频尽量高，但也要考虑功耗</p>
+</li>
+<li><p>PCIE通道数</p>
+<ul>
+<li>CPU直连通道</li>
+<li>SATA扩展、网卡、显卡</li>
+<li>南桥分发通道</li>
+</ul>
+</li>
+</ul>
+<h4 id="主板"><a href="#主板" class="headerlink" title="主板"></a>主板</h4><ul>
+<li>带M.2或者NVME</li>
+<li>安装系统，性能高</li>
+</ul>
+<h4 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h4><ul>
+<li><p><strong>容量</strong>: 10G+</p>
+</li>
+<li><p><strong>分配</strong>:</p>
+<ul>
+<li>系统: 2G</li>
+<li>NAS(直通硬盘NVME,M.2): 4-8G</li>
+<li>Windows: 4-8G</li>
+</ul>
+</li>
+</ul>
+<h4 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h4><ul>
+<li><strong>硬盘</strong>: 有啥用啥</li>
+<li><strong>未来计划</strong>: 上16T!!</li>
+</ul>
+<h4 id="显卡"><a href="#显卡" class="headerlink" title="显卡"></a>显卡</h4><ul>
+<li><strong>自有</strong>: 750ti，230元</li>
+<li><strong>购买选项</strong>: 1030，400元</li>
+</ul>
+<h4 id="电源"><a href="#电源" class="headerlink" title="电源"></a>电源</h4><ul>
+<li><strong>品牌</strong>: 大厂</li>
+<li><strong>认证</strong>: 铜牌</li>
+<li><strong>功率</strong>: 400W</li>
+<li><strong>价格</strong>: 200元</li>
+</ul>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li><strong>机箱</strong>: 待定</li>
+<li><strong>网卡</strong>: 待定</li>
+<li><strong>扩展</strong>: 待定</li>
+</ul>
+<h3 id="系统选择"><a href="#系统选择" class="headerlink" title="系统选择"></a>系统选择</h3><h4 id="底层系统"><a href="#底层系统" class="headerlink" title="底层系统"></a>底层系统</h4><ul>
+<li><strong>PVE</strong> (Proxmox Virtual Environment)</li>
+</ul>
+<h4 id="虚拟化方案"><a href="#虚拟化方案" class="headerlink" title="虚拟化方案"></a>虚拟化方案</h4><ul>
+<li><p><strong>Docker容器</strong>:</p>
+<ul>
+<li>Windows</li>
+<li>Linux</li>
+<li>Others</li>
+</ul>
+</li>
+</ul>
+<h3 id="内容管理"><a href="#内容管理" class="headerlink" title="内容管理"></a>内容管理</h3><h4 id="影视资源"><a href="#影视资源" class="headerlink" title="影视资源"></a>影视资源</h4><ul>
+<li><strong>保密级别</strong>: 无</li>
+<li><strong>索引功能</strong>: 支持按照<strong>时间</strong>、<strong>类型</strong>、<strong>时长</strong>来分类</li>
+</ul>
+<h4 id="相片管理"><a href="#相片管理" class="headerlink" title="相片管理"></a>相片管理</h4><ul>
+<li><strong>保密级别</strong>: 自家人</li>
+<li><strong>功能</strong>: 备份</li>
+<li><strong>索引功能</strong>: 按<strong>时间</strong>来排序</li>
+<li><strong>未来计划</strong>: 加入智能分类，区分人像、景色、证件</li>
+</ul>
+<h4 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h4><ul>
+<li><strong>保密级别</strong>: 自家人</li>
+<li><strong>功能</strong>: 备份</li>
+<li><strong>服务</strong>: 建立服务，将练习案例和学习笔记挂载网站，方便自己随时<strong>查看和分享</strong></li>
+</ul>
+<h4 id="赛博手办"><a href="#赛博手办" class="headerlink" title="赛博手办"></a>赛博手办</h4><ul>
+<li><strong>保密级别</strong>: only myself</li>
+<li><strong>内容</strong>: 略~</li>
+</ul>
+<h4 id="视频素材"><a href="#视频素材" class="headerlink" title="视频素材"></a>视频素材</h4><ul>
+<li><strong>状态</strong>: 待发掘</li>
+<li><strong>前景</strong>: 未来可期</li>
+<li><strong>学习计划</strong>: 未来会学（可能）</li>
+<li><strong>内容</strong>: 略~</li>
+</ul>
+<h4 id="特殊功能"><a href="#特殊功能" class="headerlink" title="特殊功能"></a>特殊功能</h4><ul>
+<li><strong>网盘下载</strong></li>
+</ul>
+<hr>
+<h2 id="项目进展"><a href="#项目进展" class="headerlink" title="项目进展"></a>项目进展</h2><h3 id="2025年6月8日-已实现家庭服务器"><a href="#2025年6月8日-已实现家庭服务器" class="headerlink" title="2025年6月8日 - 已实现家庭服务器"></a>2025年6月8日 - 已实现家庭服务器</h3><ol>
+<li><p><strong>硬件搭建</strong>: 300元购买硬件，搭建了一个PVE</p>
+<ul>
+<li><strong>问题</strong>: PVE装的有bug，得插着U盘才能开机</li>
+<li><strong>结果</strong>: 遂不折腾，闲置了</li>
+</ul>
+</li>
+<li><p><strong>当前方案</strong>: 家里固定的台式机承担了大部分使用场景</p>
+<ul>
+<li>NAS-cab</li>
+<li>笔记</li>
+<li>Docker</li>
+<li>Code</li>
+<li>AI部署</li>
+<li>下载</li>
+<li>备份</li>
+</ul>
+</li>
+</ol>
+<h3 id="2025年7月15日-服务器系统更换为FnOS"><a href="#2025年7月15日-服务器系统更换为FnOS" class="headerlink" title="2025年7月15日 - 服务器系统更换为FnOS"></a>2025年7月15日 - 服务器系统更换为FnOS</h3><ol>
+<li><p><strong>硬件配置</strong>:</p>
+<ul>
+<li>CPU: E3</li>
+<li>内存: 4G</li>
+<li>显卡: 无</li>
+<li>系统盘: SSD 128G</li>
+<li>存储盘: HDD 1T</li>
+</ul>
+</li>
+<li><p><strong>功能定位</strong>: 相当于带点功能的额外存储</p>
+<ul>
+<li>相册备份</li>
+<li>素材存储</li>
+<li>影音资源</li>
+</ul>
+</li>
+<li><p><strong>FnOS优势</strong>:</p>
+<ul>
+<li>给每个账号一个内网穿透</li>
+<li>量不多，但够用，而且还方便</li>
+</ul>
+</li>
+</ol>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://space.bilibili.com/439413018">
+            <span class="icon">
+              <i class="fab fa-bilibili"></i>
+            </span>
+
+            <span class="label">Bilibili</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/NAS/" rel="tag"><i class="fa fa-tag"></i> NAS</a>
+              <a href="/tags/%E5%AE%B6%E5%BA%AD%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag"><i class="fa fa-tag"></i> 家庭服务器</a>
+              <a href="/tags/Fnos/" rel="tag"><i class="fa fa-tag"></i> Fnos</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/06/%E4%B8%8B%E5%8D%88%E7%9C%8B%E4%BA%86%E9%83%A8%E7%A7%91%E5%B9%BB%E7%94%B5%E5%BD%B1/" rel="next" title="下午看了部科幻电影">
+                  下午看了部科幻电影 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">豫ICP备 2025130628 </a>
+  </div>
+  <div class="copyright">
+    &copy; 2023 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">小徐至少有小梦</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">8k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">31 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
